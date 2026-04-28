@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/pngtree-mexican-restaurant-logo-png-image_15948900.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miskatul's Mexican Restaurant | Book a Table</title>
+    <style>
+      .contact-section {
+        display: flex;
+        gap: 40px;
+        padding: 60px 7vw 80px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      /* ── Map ── */
+      .map-container {
+        flex: 1;
+        min-width: 280px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(23, 200, 115, 0.25);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 480px;
+        border: none;
+        display: block;
+      }
+
+      .map-info {
+        margin-top: 20px;
+        background: white;
+        border-radius: 12px;
+        padding: 20px 24px;
+        box-shadow: 0 4px 15px rgba(23, 200, 115, 0.15);
+      }
+
+      .map-info p {
+        font-size: 15px;
+        color: #444;
+        line-height: 1.8;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .map-info p:last-child { margin-bottom: 0; }
+
+      .map-info i {
+        color: rgb(32, 127, 23);
+        margin-top: 3px;
+        width: 16px;
+      }
+
+      /* ── Form ── */
+      .form-container {
+        flex: 1;
+        min-width: 280px;
+        background: white;
+        border-radius: 16px;
+        padding: 40px 36px;
+        box-shadow: 0 6px 25px rgba(23, 200, 115, 0.2);
+      }
+
+      .form-container h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .form-container h2 span {
+        color: rgb(12, 82, 5);
+      }
+
+      .form-container p.form-sub {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgb(30, 106, 23);
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid rgb(179, 225, 194);
+        border-radius: 8px;
+        font-size: 15px;
+        font-family: sans-serif;
+        background-color: rgb(245, 252, 245);
+        outline: none;
+        transition: border 0.2s, box-shadow 0.2s;
+        color: #333;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: rgb(30, 106, 23);
+        box-shadow: 0 0 0 3px rgba(30, 106, 23, 0.1);
+        background-color: white;
+      }
+
+      .form-group textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .form-container .red_btn {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 16px;
+      }
+
+      /* Success message */
+      .success-msg {
+        display: none;
+        margin-top: 16px;
+        padding: 14px 18px;
+        background-color: rgb(218, 233, 218);
+        border: 1px solid rgb(30, 106, 23);
+        border-radius: 8px;
+        font-size: 14px;
+        color: rgb(12, 82, 5);
+        font-weight: bold;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .contact-section {
+          flex-direction: column;
+          padding: 40px 5vw 60px;
+        }
+
+        .map-container iframe { height: 300px; }
+        .form-container { padding: 28px 20px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ════════════════ HEADER ════════════════ -->
+    <header>
+      <div class="header">
+        <div class="headerbar">
+          <i class="fa-solid fa-xmark" id="hdcross"></i>
+          <div class="account">
+            <ul>
+              <a href="#"><li><i class="fa-solid fa-user"></i></li></a>
+              <a href="#"><li><i class="fa-solid fa-cart-shopping"></i></li></a>
+              <a href="#"><li><i class="fa-solid fa-magnifying-glass" id="searchicon1"></i></li></a>
+              <div class="search" id="searchinput1">
+                <input type="search" placeholder="Search…">
+                <i class="fa-solid fa-magnifying-glass srchicon"></i>
+              </div>
+            </ul>
+          </div>
+          <div class="nav">
+            <ul>
+              <a href="index.html"><li>Home</li></a>
+              <a href="menu.html"><li>Menu</li></a>
+              <a href="about.html"><li>About</li></a>
+              <a href="book_table.html"><li>Book Table</li></a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="logo">
+          <img src="/images/360_F_284888199_HnuXdDdbLgpQJkvpADTNMmCeV4E4uDP2.jpg" alt="Restaurant logo">
+        </div>
+
+        <div class="bar">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="nav">
+          <ul>
+            <a href="index.html"><li>Home</li></a>
+            <a href="menu.html"><li>Menu</li></a>
+            <a href="about.html"><li>About</li></a>
+            <a href="book_table.html"><li>Book Table</li></a>
+          </ul>
+        </div>
+
+        <div class="account">
+          <ul>
+            <a href="#"><li><i class="fa-solid fa-user"></i></li></a>
+            <a href="#"><li><i class="fa-solid fa-cart-shopping"></i></li></a>
+            <a href="#"><li><i class="fa-solid fa-magnifying-glass" id="searchicon2"></i></li></a>
+            <div class="search" id="searchinput2">
+              <input type="search" placeholder="Search…">
+              <i class="fa-solid fa-magnifying-glass srchicon"></i>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ════════════════ HERO ════════════════ -->
+    <section class="about-hero">
+      <h1>Book a Table</h1>
+      <p>Send us a message and we'll confirm your reservation within 24 hours.</p>
+    </section>
+
+    <!-- ════════════════ MAP + FORM ════════════════ -->
+    <div class="contact-section">
+
+      <!-- Map -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215151615934!2d-73.9599!3d40.7678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258ead4e7f7b1%3A0x7a1d9b2d1f4c3e5a!2s695+Park+Ave%2C+New+York%2C+NY+10065!5e0!3m2!1sen!2sus!4v1700000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-info">
+          <p><i class="fa-solid fa-location-dot"></i> 695 Park Ave, New York, NY 10065</p>
+          <p><i class="fa-solid fa-clock"></i> Open daily · 11:00 AM – 11:00 PM</p>
+          <p><i class="fa-solid fa-phone"></i> (127) 127-1271</p>
+          <p><i class="fa-solid fa-envelope"></i> miskatulmoon@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="form-container">
+        <h2>Make a Reservation</h2>
+        <p class="form-sub">Fill in your details below and let us know when you'd like to visit. We'll get back to you shortly to confirm.</p>
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="e.g. Steven Palermo">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="e.g. steven@gmail.com">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Let us know your preferred date, time, and number of guests…"></textarea>
+        </div>
+
+        <button class="red_btn" onclick="submitForm()">
+          Send Message <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+
+        <div class="success-msg" id="successMsg">
+          <i class="fa-solid fa-circle-check"></i> Message sent! We'll confirm your reservation soon.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ════════════════ FOOTER ════════════════ -->
+    <footer>
+      <p>© 2026 Miskatul's Mexican Restaurant. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="book_table.html">Book Table</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/en/"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      function submitForm() {
+        const name    = document.getElementById('name').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+          alert('Please fill in all fields before submitting.');
+          return;
+        }
+
+        // Show success message and clear form
+        document.getElementById('successMsg').style.display = 'block';
+        document.getElementById('name').value    = '';
+        document.getElementById('email').value   = '';
+        document.getElementById('message').value = '';
+      }
+    </script>
+  </body>
+</html>
